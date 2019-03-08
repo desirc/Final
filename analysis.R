@@ -28,14 +28,21 @@ df_by_inspection <- df %>%
   summarise("Grade" = mean(Grade)) %>% 
   as_data_frame()
 
+
+pal <- colorNumeric(
+  palette = c("red", "yellow", "orange", "green"),
+  domain = df_by_inspection$Grade
+)
+
 leaflet() %>% 
   addProviderTiles("CartoDB") %>% 
   addCircleMarkers(
     data = df_by_inspection,
     lat = ~Latitude, 
     lng = ~Longitude,
-    radius = 0.5,
-    color = "red"
+    radius = 5,
+    color = ~pal(Grade),
+    label = ~Name
   )
 
 
