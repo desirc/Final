@@ -10,7 +10,7 @@ library(tools)
 library(ggplot2)
 
 
-source("keys.R")
+#source("keys.R")
 
 
 df <- read.csv(
@@ -85,3 +85,6 @@ cor <- cor.test(
   y = df_merged$rating,
   method = "spearman"
 )$estimate
+
+
+

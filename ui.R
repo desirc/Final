@@ -3,6 +3,7 @@ library("dplyr")
 library("shinythemes")
 library("DT")
 library("shinyWidgets")
+source("analysis.R")
 
 ui <- fluidPage(
   #Chooses the theme and sets background color.
@@ -18,9 +19,15 @@ ui <- fluidPage(
                        ),
       conditionalPanel(condition="input.tabselected == 2",
                        h3("2nd tab selected")
+                       
       ),
       conditionalPanel(condition="input.tabselected == 3",
-                       h3("3rd tab selected")
+                       h3("3rd tab selected"),
+                       #Radio buttons:
+                       radioButtons("graph_buttons",
+                                    "Choose the y axis input:",
+                                    c("Inspection score" = "mean_inspection_score", "Grade_score" = "mean_grade")
+                       )
       ),
       conditionalPanel(condition="input.tabselected == 4",
                        h3("4th tab selected")
@@ -54,7 +61,29 @@ ui <- fluidPage(
           textOutput("p_val"),
           p("This means that we can confidently reject the null hypothesis in favor of the alternative hypothesis at 0.005 significance level.")
         ),
-        tabPanel("Question 3", value = 3),
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        tabPanel("Question 3", value = 3,
+                 h4("Relationship of price and inspection grades"),
+                 p("Below shows a graph of...."),
+                 plotOutput("price_v_grade", width = "100%"),
+                 br(),
+                 plotOutput("number_restaurants_v_price", width = "100%")),
+                
+        
+        
+        
+        
+        
+        
+        
         tabPanel("Question 4", value = 4),
         #Displays a table in the last two tabs
         tabPanel("Inspection data", value = 5,
