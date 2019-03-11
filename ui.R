@@ -4,6 +4,7 @@ library("shinythemes")
 library("DT")
 library("shinyWidgets")
 
+
 ui <- fluidPage(
   #Chooses the theme and sets background color.
   theme = shinytheme("cosmo"),
@@ -55,7 +56,15 @@ ui <- fluidPage(
           p("This means that we can confidently reject the null hypothesis in favor of the alternative hypothesis at 0.005 significance level.")
         ),
         tabPanel("Question 3", value = 3),
-        tabPanel("Question 4", value = 4),
+        tabPanel("Question 4", value = 4,
+                 p("Here, we look at the mean inspection score and review count of restaurants"),
+                 plotOutput("point_plot"),
+                 p("Here is the quantitative analysis."),
+                 textOutput("review_count"),
+                 p("Now let's test the hypothesis that if restaurants with mean inspection score greater than 238 and those with mean less than 238 have the same average review count"),
+                 p("Opposingly though, the other hypothesis will be that if the restaurants with mean inspection score greater then 238 have smaller average review count than those with mean less than 238"),
+                 textOutput("ceci_p_val")
+                 ),
         #Displays a table in the last two tabs
         tabPanel("Inspection data", value = 5,
                  dataTableOutput(outputId = "table"), width = "100%"),

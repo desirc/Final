@@ -8,6 +8,7 @@ library(DT)
 
 source("analysis.R")
 server <- function(input,output){
+  #Nhat's part 2
   output$hex_plot <- renderPlot({
     hex_plot
   })
@@ -23,7 +24,23 @@ server <- function(input,output){
       p_val
     )
   })
-  
+  #Cecilia's part 4
+  output$point_plot <- renderPlot({
+    point_plot
+  })
+  output$review_count <- renderText({
+    paste(
+      "The Pearson review count correlation of the mean inspection score and review count on Yelp is:",
+      ceci_cor
+    )
+  })
+  output$ceci_p_val <- renderText({
+    paste(
+      "The p-value of the hypothesis is:",
+      ceci_p_val
+    )
+  })
+  #data at the end
   output$table <- renderDataTable({
     df <- read.csv(
       "./data/Food_Establishment_Inspection_Data.csv", 
