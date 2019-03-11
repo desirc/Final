@@ -19,7 +19,14 @@ server <- function(input,output){
       filter(Zip.Code == 98105, Inspection.Date > as.Date("2009-01-01")) %>% 
       mutate(
         Grade = as.numeric(Grade)
-      )
+        
+      ) %>% 
+      filter(Grade == input$grade) %>% 
+      select(Name, Grade, Description, Inspection.Result )
+    
     df
+    
   })
+  
+
 }

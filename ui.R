@@ -5,8 +5,7 @@ library("DT")
 library("shinyWidgets")
 
 ui <- fluidPage(
-  themeSelector(),
-  #theme = shinytheme("cosmo"),
+  theme = shinytheme("cosmo"),
   setBackgroundColor("#e6e6fa"),
   titlePanel("Add title here"),
   sidebarLayout(
@@ -25,7 +24,13 @@ ui <- fluidPage(
                        h3("4th tab selected")
       ),
       conditionalPanel(condition="input.tabselected == 5",
-                       h3("Datasets")
+                       h3("Datasets"),
+                       radioButtons(
+                         "grade",
+                         "Grade",
+                         c("1"="1","2"="2","3"="3","4"="4"),
+                         selected = "1"
+                       )
       )
     ),
     mainPanel(
