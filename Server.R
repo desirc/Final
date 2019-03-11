@@ -20,10 +20,12 @@ server <- function(input,output){
       mutate(
         Grade = as.numeric(Grade)
         
-      ) %>% 
-      filter(Grade == input$grade) %>% 
-      select(Name, Grade, Description, Inspection.Result )
-    
+      )
+    print(input$grade)
+      if((input$grade != "All")) {
+        df <- df %>% filter(Grade == input$grade)
+      } 
+    df <- df %>% select(Name, Grade, Description, Inspection.Result )
     df
     
   })
