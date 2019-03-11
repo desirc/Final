@@ -9,10 +9,6 @@ library(fuzzyjoin)
 library(tools)
 library(ggplot2)
 
-
-source("keys.R")
-
-
 df <- read.csv(
   "./data/Food_Establishment_Inspection_Data.csv", 
   stringsAsFactors = FALSE,
