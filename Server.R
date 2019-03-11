@@ -17,11 +17,11 @@ server <- function(input,output){
   })
   
   output$hex_plot <- renderPlot({
-    hex_plot <- ggplot(df_merged, aes_string(paste0("`", input$feature, "`"), "rating")) +
-      geom_hex() +
+    hex_plot <- ggplot(df_merged, aes_string("rating", paste0("`", input$feature, "`"))) +
+      geom_count() +
       labs(
-        x = input$feature,
-        y = "Rating"
+        y = input$feature,
+        x = "Rating"
       )
     hex_plot
   })
