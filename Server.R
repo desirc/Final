@@ -30,5 +30,9 @@ server <- function(input,output){
     
   })
   
+  output$table2 <- renderDataTable({
+    
+  })
+  
 
 }
