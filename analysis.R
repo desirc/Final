@@ -12,6 +12,7 @@ library(ggplot2)
 
 source("keys.R")
 
+
 df <- read.csv(
   "./data/Food_Establishment_Inspection_Data.csv", 
   stringsAsFactors = FALSE,
@@ -76,10 +77,10 @@ low_score <- df_merged %>%
 test_result <- t.test(x = high_score, y = low_score, alternative = "less")
 p_val <- test_result$p.value
 
-ggplot(df_merged, aes(`Mean Inspection Score`, rating)) +
+hex_plot <- ggplot(df_merged, aes(`Mean Inspection Score`, rating)) +
   geom_hex()
 
-cor.test(
+cor <- cor.test(
   x = df_merged$`Mean Inspection Score`,
   y = df_merged$rating,
   method = "spearman"

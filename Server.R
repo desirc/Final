@@ -6,8 +6,24 @@ library(httr)
 library(jsonlite)
 library(DT)
 
-
+source("analysis.R")
 server <- function(input,output){
+  output$hex_plot <- renderPlot({
+    hex_plot
+  })
+  output$rank <- renderText({
+    paste(
+      "The Spearman rank correlation of mean inspection score and rating on Yelp is:",
+      cor
+    )
+  })
+  output$p_val <- renderText({
+    paste(
+      "The p-value of the hypothesis is:",
+      p_val
+    )
+  })
+  
   output$table <- renderDataTable({
     df <- read.csv(
       "./data/Food_Establishment_Inspection_Data.csv", 

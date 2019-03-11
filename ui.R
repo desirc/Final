@@ -42,7 +42,18 @@ ui <- fluidPage(
       h3("Display"),
       tabsetPanel(
         tabPanel("Question 1", value = 1),
-        tabPanel("Question 2", value = 2),
+        tabPanel(
+          "Question 2", value = 2,
+          p("Here, we look at the relationship between the mean inspection score and rating of restaurants"),
+          plotOutput("hex_plot"),
+          p("There does not seem to be any clear relationship, so we will perform some qualitative analysis."),
+          textOutput("rank"),
+          p("This suggests a weak negative correlation."),
+          p("Next, we will test the hypothesis that restaurants with mean inspection score greater than 5 and those with mean less than 5 have the same average rating"),
+          p("The alternative hypothesis will be that the restaurants with mean inspection score greater than 5 have smaller average rating than those with mean less than 5"),
+          textOutput("p_val"),
+          p("This means that we can confidently reject the null hypothesis in favor of the alternative hypothesis at 0.005 significance level.")
+        ),
         tabPanel("Question 3", value = 3),
         tabPanel("Question 4", value = 4),
         #Displays a table in the last two tabs
