@@ -19,7 +19,6 @@ ui <- fluidPage(
                        ),
       conditionalPanel(
         condition="input.tabselected == 2",
-        h3("2nd tab selected"),
         radioButtons(
           inputId = "feature",
           label = "Compare rating with:",
@@ -31,7 +30,7 @@ ui <- fluidPage(
         ),
         sliderInput(
           inputId = "cutoff",
-          label = "Rating Cutoff",
+          label = "Rating cutoff for hypothesis testing",
           min = 1,
           max = 5,
           value = 3,

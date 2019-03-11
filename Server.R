@@ -51,7 +51,7 @@ server <- function(input,output){
     paste(
       "Next, we will test the hypothesis that restaurants with rating greater than",
       input$cutoff,
-      "and those with rating less than", 
+      "and those with rating at most", 
       input$cutoff,
       "have the same",
       tolower(input$feature)
@@ -62,7 +62,7 @@ server <- function(input,output){
     paste(
       "The alternative hypothesis will be that the restaurants with rating greater than",
       input$cutoff,
-      "and those with rating less than", 
+      "and those with rating at most", 
       input$cutoff,
       "have different",
       tolower(input$feature)
