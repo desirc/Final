@@ -54,10 +54,9 @@ server <- function(input,output){
   })
   
   output$price_v_grade <- renderPlot({
-    temp_df_merged <- df_merged
+    temp_df_merged <- df_merged %>% drop_na(price)
     names(temp_df_merged) <- c("Longitude", "Latitude","mean_inspection_score","mean_grade","X","Name","coordinates.latitude","coordinates.longitude","price","review_count","rating","is_closed")
-    #slider_vals <- filter(temp_df_merged, rating < input$slide_key_rating)
-    ggplot(data = temp_df_merged,  aes(na.rm = TRUE)) +
+    ggplot(data = temp_df_merged) +
       geom_col(mapping = aes(x = price, y = temp_df_merged[,input$graph_buttons], fill = Name)) +
       theme(legend.position = 'none')
   })
@@ -71,6 +70,15 @@ server <- function(input,output){
     ggplot(data = price_df)+
       geom_col(mapping = aes(x = price, y = num_restaurants), fill = "Red")
   })
+  
+  output$graph_type <- renderPrint(
+    if (input$graph_buttons == "mean_inspection_score") {
+      response <- "mean inspection score."
+    } else {
+    response <- "mean grade."
+    }
+    response
+  )
   
 
 }

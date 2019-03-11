@@ -72,7 +72,7 @@ ui <- fluidPage(
         
         tabPanel("Question 3", value = 3,
                  h4("Relationship of price and inspection grades"),
-                 p("Below shows a graph of...."),
+                 p("Below shows a graph of"), printOutput("graph_type"),
                  plotOutput("price_v_grade", width = "100%"),
                  br(),
                  plotOutput("number_restaurants_v_price", width = "100%")),
