@@ -46,6 +46,9 @@ df_by_inspection <- df %>%
   ) %>% 
   as_data_frame()
 
+hex_plot <- ggplot(df_merged, aes_string('`Mean Inspection Score`', "rating")) +
+  geom_hex()
+hex_plot
 
 
 yelp <- read.csv("./data/yelp.csv", stringsAsFactors = FALSE) 
@@ -76,12 +79,3 @@ low_score <- df_merged %>%
 
 test_result <- t.test(x = high_score, y = low_score, alternative = "less")
 p_val <- test_result$p.value
-
-hex_plot <- ggplot(df_merged, aes(`Mean Inspection Score`, rating)) +
-  geom_hex()
-
-cor <- cor.test(
-  x = df_merged$`Mean Inspection Score`,
-  y = df_merged$rating,
-  method = "spearman"
-)$estimate

@@ -16,8 +16,26 @@ ui <- fluidPage(
       conditionalPanel(condition="input.tabselected == 1",
                        h3("1st tab selected")
                        ),
-      conditionalPanel(condition="input.tabselected == 2",
-                       h3("2nd tab selected")
+      conditionalPanel(
+        condition="input.tabselected == 2",
+        h3("2nd tab selected"),
+        radioButtons(
+          inputId = "feature",
+          label = "Compare rating with:",
+          choices = c(
+            "Mean Inspection Score",
+            "Mean Grade"
+          ),
+          selected = "Mean Inspection Score"
+        ),
+        sliderInput(
+          inputId = "cutoff",
+          label = "Rating Cutoff",
+          min = 1,
+          max = 5,
+          value = 3,
+          step = 0.5
+        )
       ),
       conditionalPanel(condition="input.tabselected == 3",
                        h3("3rd tab selected")
@@ -43,16 +61,19 @@ ui <- fluidPage(
       tabsetPanel(
         tabPanel("Question 1", value = 1),
         tabPanel(
-          "Question 2", value = 2,
-          p("Here, we look at the relationship between the mean inspection score and rating of restaurants"),
+          "Rating", value = 2,
+          p("Here, we look at the relationship between the rating and other factors (which can be chosen to the left)."),
           plotOutput("hex_plot"),
-          p("There does not seem to be any clear relationship, so we will perform some qualitative analysis."),
+          h2("Qualitative Analysis"),
+          p("Visualization might be deceiving, so let us look at some qualitative analysis:"),
+          h3("Rank Correlation"),
           textOutput("rank"),
-          p("This suggests a weak negative correlation."),
-          p("Next, we will test the hypothesis that restaurants with mean inspection score greater than 5 and those with mean less than 5 have the same average rating"),
-          p("The alternative hypothesis will be that the restaurants with mean inspection score greater than 5 have smaller average rating than those with mean less than 5"),
-          textOutput("p_val"),
-          p("This means that we can confidently reject the null hypothesis in favor of the alternative hypothesis at 0.005 significance level.")
+          textOutput("rank_res"),
+          h3("Hypothesis Testin"),
+          textOutput("null_hypo"),
+          textOutput("a_hypo"),
+          textOutput("p_val_res"),
+          textOutput("hypo_conclude")
         ),
         tabPanel("Question 3", value = 3),
         tabPanel("Question 4", value = 4),

@@ -9,18 +9,90 @@ library(DT)
 source("analysis.R")
 server <- function(input,output){
   output$hex_plot <- renderPlot({
+    hex_plot <- ggplot(df_merged, aes_string(paste0("`", input$feature, "`"), "rating")) +
+      geom_hex() +
+      labs(
+        x = input$feature,
+        y = "Rating"
+      )
     hex_plot
   })
+  
+  
+  cor <- reactive({
+    cor.test(
+      x = df_merged %>% select(input$feature) %>% pull() %>% as.numeric(),
+      y = df_merged %>% select(rating) %>% pull() %>% as.numeric(),
+      method = "spearman"
+    )$estimate
+  })
+  
   output$rank <- renderText({
+    x <- paste0("`", input$feature, "`")
     paste(
-      "The Spearman rank correlation of mean inspection score and rating on Yelp is:",
-      cor
+      "The Spearman rank correlation of",
+      tolower(input$feature), 
+      "and rating on Yelp is:",
+      cor()
     )
   })
-  output$p_val <- renderText({
+  
+  output$rank_res <- renderText({
+    paste(
+      "This suggests a",
+      ifelse(abs(cor()) > 0.5, "strong", "weak"),
+      ifelse(cor() < 0, "negative", "positive"),
+      "correlation."
+    )
+  })
+  
+  output$null_hypo <- renderText({
+    paste(
+      "Next, we will test the hypothesis that restaurants with rating greater than",
+      input$cutoff,
+      "and those with rating less than", 
+      input$cutoff,
+      "have the same",
+      tolower(input$feature)
+    )
+  })
+  
+  output$a_hypo <- renderText({
+    paste(
+      "The alternative hypothesis will be that the restaurants with rating greater than",
+      input$cutoff,
+      "and those with rating less than", 
+      input$cutoff,
+      "have different",
+      tolower(input$feature)
+    )
+  })
+  
+  p_val <- reactive({
+    high_rating <- df_merged %>% 
+      filter(rating > input$cutoff) %>% 
+      select(input$feature) %>% pull()
+    
+    low_rating <- df_merged %>% 
+      filter(rating <= input$cutoff) %>% 
+      select(input$feature) %>% pull()
+    
+    test_result <- t.test(x = high_rating, y = low_rating)
+    test_result$p.value
+  })
+  
+  output$p_val_res <- renderText({
     paste(
       "The p-value of the hypothesis is:",
-      p_val
+      p_val()
+    )
+  })
+  
+  output$hypo_conclude <- renderText({
+    ifelse(
+      p_val() < 0.05,
+      "This means that we can confidently reject the null hypothesis in favor of the alternative hypothesis at 0.05 significance level",
+      "This means that we cannot reject the null hypothesis."
     )
   })
   
