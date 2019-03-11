@@ -70,7 +70,7 @@ ui <- fluidPage(
           h3("Rank Correlation"),
           textOutput("rank"),
           textOutput("rank_res"),
-          h3("Hypothesis Testin"),
+          h3("Hypothesis Testing"),
           textOutput("null_hypo"),
           textOutput("a_hypo"),
           textOutput("p_val_res"),
