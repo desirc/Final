@@ -1,0 +1,210 @@
+"","name","coordinates.latitude","coordinates.longitude","price","review_count","rating","is_closed"
+"1","A Burger Place",47.659244,-122.31285,"$",162,4,FALSE
+"2","Aladdin Falafel Corner",47.66244,-122.31344,"$",410,4.5,FALSE
+"3","Aladdin Gyro-Cery",47.65805,-122.31346,"$",428,4,FALSE
+"4","Cafe Allegro",47.6587736,-122.3128673,"$",247,3.5,FALSE
+"5","Ton Kiang Barbeque Noodle House",47.59763,-122.32415,"$",113,4,FALSE
+"6","Ronald McDonald House Charities Western Washington & Alaska",47.6670303344727,-122.28401184082,NA,7,4,FALSE
+"7","Burnett Real Estate",47.3034797,-122.5832355,NA,4,5,FALSE
+"8","AMC Seattle 10",47.66174,-122.31807,NA,301,3,FALSE
+"9","Araya's Place",47.6675671,-122.3128845,"$$",343,4.5,FALSE
+"10","Arepa Venezuelan Kitchen",47.6647592219734,-122.312693352331,"$",231,4.5,FALSE
+"11","Ba Bar",47.6615929627085,-122.298148758709,"$$",212,3,FALSE
+"12","Bambu",47.66163,-122.31339,"$",47,3.5,FALSE
+"13","BCZhang",47.6641,-122.31291,NA,28,4,FALSE
+"14","Bean & Bagel",47.65547,-122.31281,"$",78,3.5,FALSE
+"15","Beetle Cafe",47.6608,-122.31283,"$",104,4,FALSE
+"16","Big Time Brewing Company",47.65784,-122.31354,"$$",279,4,FALSE
+"17","Big Tuna",47.6610565185547,-122.317375183105,"$",73,3.5,FALSE
+"18","Blue Moon Tavern",47.66149,-122.32002,"$",85,3.5,FALSE
+"19","Boba Up",47.65807,-122.31354,"$",92,4,FALSE
+"20","WOW Bubble Tea",47.6628435,-122.3132573,"$",290,4,FALSE
+"21","Burger and Kabob Hut",47.65815,-122.31301,"$",274,4,FALSE
+"22","Burgermaster",47.66158,-122.29393,"$",182,3.5,FALSE
+"23","Burke-Gilman Brewing",47.66165,-122.28772,"$$",21,4.5,FALSE
+"24","Cafe On The Ave",47.65851,-122.31353,"$$",362,2.5,FALSE
+"25","Cafe Racer",47.6714284754772,-122.31704899185,"$",151,4,FALSE
+"26","Cafe Solstice",47.657406,-122.3129055,"$",387,3.5,FALSE
+"27","CaliBurger Seattle-U District",47.6616201,-122.3135102,"$$",519,3,FALSE
+"28","Cedars Restaurant",47.6647397425756,-122.31433656316,"$$",806,3.5,FALSE
+"29","Cedars of Lebanon",47.65968,-122.31338,"$",168,4,FALSE
+"30","Chatime",47.66325,-122.31452,"$",70,3.5,FALSE
+"31","Chi Mac",47.66208,-122.31344,"$$",267,4,FALSE
+"32","Chi Omega Sorority",47.66278,-122.30867,NA,1,5,FALSE
+"33","Chili's South Indian Restaurant",47.65898,-122.313,"$$",182,3.5,FALSE
+"34","China First",47.6594399,-122.3135,"$",218,2.5,FALSE
+"35","Citra",47.6638174140586,-122.312971447885,"$",190,4.5,FALSE
+"36","College Inn Pub",47.655513,-122.313119,"$",150,4,FALSE
+"37","Costa's Restaurant",47.66295,-122.3134,"$$",282,3,FALSE
+"38","Cowen Park Grocery",47.6712615,-122.3148809,"$",73,4,FALSE
+"39","Dawgpound",47.66673,-122.31347,"$$",8,4,FALSE
+"40","Delfino's Chicago Style Pizza",47.662598,-122.298765,"$$",435,3.5,FALSE
+"41","Delta Sky Club",47.442681,-122.302265,"$$",153,4,FALSE
+"42","College Hill",47.6637632,-122.3502661,"$$",8,4.5,FALSE
+"43","Dick's Drive-In",47.66111,-122.32778,"$",733,3.5,FALSE
+"44","Din Tai Fung",47.66164,-122.29921,"$$",1969,4,FALSE
+"45","Ding Tea Seattle",47.66386,-122.31339,"$",81,3.5,FALSE
+"46","Djan's Thai Restaurant",47.66154,-122.32541,"$$",389,4,FALSE
+"47","Duchess Tavern",47.6683651,-122.2966702,"$",90,3.5,FALSE
+"48","Earl's On the Avenue",47.66081,-122.31347,"$",173,3,FALSE
+"49","Elemental Pizza",47.663503,-122.2991392,"$$",321,3.5,FALSE
+"50","Ellenos Real Greek Yogurt",47.608912,-122.34058,"$",1638,5,FALSE
+"51","Eureka!",47.661897097194,-122.299133504299,"$$",566,3.5,FALSE
+"52","Even Stevens Sandwiches",47.6624282921086,-122.298678553967,"$$",127,4.5,FALSE
+"53","Evergreens Salad",47.6620039374872,-122.298651337623,"$$",82,3.5,FALSE
+"54","Fat Ducks Deli & Bakery",47.66887,-122.31327,"$",338,4.5,FALSE
+"55","Finn MacCool's Irish Public House",47.658947,-122.313523,"$",171,3,FALSE
+"56","Floating Bridge Brewing",47.6614427887238,-122.319743222871,"$",41,4.5,FALSE
+"57","Flowers Bar & Restaurant",47.6596069335938,-122.313507080078,"$",236,3,FALSE
+"58","Fran's Chocolates",47.663641,-122.299072,"$$$",176,4.5,FALSE
+"59","Frank's Oyster House & Champagne Parlor",47.66863,-122.29892,"$$",313,4,FALSE
+"60","Full Tilt Ice Cream",47.66476,-122.314506,"$",272,4,FALSE
+"61","R & M Grocery and Video",47.66865,-122.31336,"$",19,3,FALSE
+"62","General Porpoise",47.66217,-122.2933,NA,23,3,FALSE
+"63","Graduate Seattle",47.66179,-122.31461,NA,5,3.5,FALSE
+"64","Green House Korean Restaurant",47.65714,-122.31404,"$",184,3.5,FALSE
+"65","Gretchen's Place",47.6679550692991,-122.275774760119,"$",40,3.5,FALSE
+"66","Guanaco's Tacos Pupuseria",47.65714,-122.31404,"$",305,4,FALSE
+"67","Hawaii BBQ Restaurant",47.6627388,-122.3133469,"$",137,3.5,FALSE
+"68","Henry's Taiwan Kitchen",47.6568856156391,-122.314342666277,"$$",163,3,FALSE
+"69","Herkimer Coffee",47.6698722839355,-122.31339263916,"$",161,4.5,FALSE
+"70","Hiroshi's Poke",47.66359,-122.31609,"$$",210,4.5,FALSE
+"71","Hokkaido Ramen Santouka - Seattle",47.66239,-122.298872,"$$",168,3.5,FALSE
+"72","Hunan Chinese Kitchen",47.66144,-122.31341,NA,16,4,FALSE
+"73","Ichiro Teriyaki",47.657508,-122.312765,"$",189,3,FALSE
+"74","Itadakimasu",47.664349,-122.314514,"$$",350,4,FALSE
+"75","Ivar's Salmon House",47.6536199,-122.32404,"$$",1135,3.5,FALSE
+"76","Jak's Grill",47.66101,-122.28799,"$$$",405,4,FALSE
+"77","Jewel of India",47.6641,-122.31347,"$$",334,3.5,FALSE
+"78","Jimmy John's",47.6102543434532,-122.334025087033,"$",102,3.5,FALSE
+"79","JOEY U-Village",47.6615228,-122.299815,"$$",528,3.5,FALSE
+"80","Juice Press",47.6639674940258,-122.298991059403,NA,32,3,FALSE
+"81","Cold Plate",47.66776,-122.3127,"$",55,4.5,FALSE
+"82","Jujubeet",47.6650853,-122.3019857,"$$",26,3.5,FALSE
+"83","Just Burgers",47.661621,-122.312979,"$$",286,4,FALSE
+"84","K One Karaoke",47.6609142,-122.313429,NA,4,4.5,FALSE
+"85","Kai's Bistro & Lounge",47.65994,-122.31349,"$$",73,3,FALSE
+"86","The Hop and Hound",47.7595820277929,-122.205285653472,"$",69,4.5,FALSE
+"87","Kate's Pub",47.6611,-122.32461,"$",282,4,FALSE
+"88","Kidd Valley",47.66868,-122.3004,"$",83,3.5,FALSE
+"89","Kitanda Espresso & Açai",47.66104,-122.31577,NA,10,4.5,FALSE
+"90","Kong Tofu House - Seattle",47.65847,-122.3124,"$$",95,3,FALSE
+"91","The Kraken Bar & Lounge",47.6680599,-122.31321,"$",53,4.5,FALSE
+"92","Ku Sushi and Izakaya",47.66663,-122.3127,"$$",172,3.5,FALSE
+"93","Kung Fu Tea",47.664073559291,-122.312925432541,"$",162,4,FALSE
+"94","La Villa",47.6686463766373,-122.290949709713,"$$",55,4,FALSE
+"95","Laughs Comedy Club- Seattle",47.66696,-122.31707,"$$",164,4,FALSE
+"96","Little Thai Restaurant",47.6581344604492,-122.314018249512,"$",325,4,FALSE
+"97","Ly's Donuts",47.66106,-122.31737,"$",181,3.5,TRUE
+"98","Ma'ono Fried Chicken",47.66251,-122.29969,"$$",202,4,FALSE
+"99","Madeleine Bread & Desserts",47.6582099,-122.31302,"$",87,3,FALSE
+"100","Mamma Melina Ristorante + Pizzeria",47.66642,-122.300812,"$$",605,3.5,FALSE
+"101","Mamma Mia Pizzeria",47.66729,-122.3177,"$$",58,2.5,FALSE
+"102","Marlai Thai Restaurant",47.6611199,-122.28736,"$$",101,3.5,FALSE
+"103","McDonald's",47.6677400568319,-122.300400630338,"$",64,2.5,FALSE
+"104","Mee Sum Pastry",47.6091726957566,-122.341359799475,"$",685,4,FALSE
+"105","Mei Mei Cafe",47.66529,-122.31705,NA,24,4.5,FALSE
+"106","Memo's Mexican Food Restaurant",47.6643199,-122.31334,"$",309,3,FALSE
+"107","Menchie's",47.661985722439,-122.29937158739,"$",81,4,FALSE
+"108","Milano Pizza & Pasta",47.6612157739897,-122.32375065582,"$$",227,2.5,FALSE
+"109","MOD Pizza",47.56922,-122.28983,NA,15,3.5,FALSE
+"110","The Monkey Pub",47.66738,-122.3176,"$",56,4,FALSE
+"111","Mr Lu's Burgers & Seafood",47.66464,-122.31274,"$",206,4,FALSE
+"112","My Favorite Deli",47.6610260009766,-122.313941955566,"$",37,3.5,FALSE
+"113","Mr Gyros - Seattle",47.6614256338781,-122.325863408599,"$",82,4.5,FALSE
+"114","Korean Tofu House",47.658422,-122.31397,"$",608,3.5,FALSE
+"115","Nasai Teriyaki at UW",47.66004,-122.31336,"$",111,3.5,FALSE
+"116","Nasai Teriyaki",47.665599822998,-122.301200866699,"$",63,3.5,FALSE
+"117","Neptune Theatre",47.6612247526646,-122.314045876265,"$$",177,3.5,FALSE
+"118","Noodle Nation",47.65928,-122.31285,"$",316,3.5,FALSE
+"119","Northlake Tavern & Pizza House",47.65479,-122.32133,"$$",286,3.5,FALSE
+"120","Cafe O'Dessert",47.66389,-122.31339,"$",135,4,FALSE
+"121","Oasis Tea Zone",47.66201,-122.31277,"$",223,3.5,FALSE
+"122","Swedish South Lake Union Primary Care Clinic",47.6239018,-122.3358074,NA,75,2.5,FALSE
+"123","Voula's Offshore Cafe",47.65476,-122.32155,"$$",579,4,FALSE
+"124","Orange King",47.6582099,-122.31293,"$",107,3.5,FALSE
+"125","Pair",47.6686789872273,-122.294944967567,"$$",216,4,FALSE
+"126","Persepolis Grill",47.66919,-122.31333,"$$",212,4,FALSE
+"127","Pho Shizzle",47.6594222814143,-122.313303070205,"$",171,4,FALSE
+"128","Pho Thy Thy",47.6577,-122.31345,"$",173,3.5,FALSE
+"129","Pi Kappa Phi",47.66222,-122.30918,NA,1,1,FALSE
+"130","Piatti",47.66214,-122.298042,"$$",300,3.5,FALSE
+"131","Pinkaew Thai Cuisine",47.6671832778846,-122.300933257008,"$$",186,4,FALSE
+"132","Pizza Pi Vegan Pizzeria",47.6686016,-122.312872,"$$",378,4,FALSE
+"133","Pizza Ragazzi",47.66671,-122.3134,"$",141,3,FALSE
+"134","Poke Lover",47.6638596,-122.3127644,"$$",63,4,FALSE
+"135","Portage Bay Cafe - Roosevelt",47.65757,-122.3176,"$$",2021,4,FALSE
+"136","Pudge Bros Pizza",47.66116,-122.32548,"$",192,3.5,FALSE
+"137","Queen Mary Tea Room",47.66867,-122.29558,"$$",294,4,FALSE
+"138","Rachel's Ginger Beer - University Village",47.66251,-122.29969,"$$",119,4,FALSE
+"139","Ram Restaurant & Brewery",47.6641841424273,-122.297755874066,"$$",534,3,FALSE
+"140","Rancho Bravo Tacos",47.66119,-122.32651,"$",453,4,FALSE
+"141","Rancho Bravo Tacos",47.6595391,-122.3134504,"$",55,3.5,FALSE
+"142","Ravenna Brewing Company",47.668382,-122.29925,"$",68,4.5,FALSE
+"143","Red Pepper",47.6626122,-122.313306257129,"$$",104,3,FALSE
+"144","Residence Inn by Marriott Seattle University District",47.6617383541652,-122.315657617037,"$$",26,4.5,FALSE
+"145","Saigon Deli",47.6581344604492,-122.314018249512,"$",189,4,FALSE
+"146","Samir's Mediterranean Grill",47.65991,-122.31341,"$",154,4,FALSE
+"147","Samurai Noodle",47.65799,-122.31288,"$$",347,3,FALSE
+"148","Sand Point Grill",47.66811,-122.27691,"$$",116,4,FALSE
+"149","Sarducci's Specialty Sub",47.65796,-122.31354,"$",109,3.5,FALSE
+"150","Zen Noodle & Cafe",47.66236,-122.31343,"$",147,3.5,FALSE
+"151","Seattle Sunshine Coffee",47.6688690185547,-122.289855957031,"$",78,4.5,FALSE
+"152","Seven Coffee Roasters",47.6690769,-122.3060252,"$",59,4.5,FALSE
+"153","Sharetea",47.6613402793565,-122.316258698702,"$",454,4,FALSE
+"154","Shawarma King",47.66093,-122.31359,"$",204,4.5,FALSE
+"155","Shawarma King",47.6679654176159,-122.312966287136,"$",22,4,FALSE
+"156","Shell",47.58143,-122.31374,"$",51,4,FALSE
+"157","Shultzy's Bar & Grill",47.65735,-122.3129,"$$",374,3.5,FALSE
+"158","Sichuan Hot Pot",47.6643,-122.31557,"$$",47,3,FALSE
+"159","Woodinville Chiropractic",47.7557901757665,-122.151728016394,NA,8,5,FALSE
+"160","Sizzle&Crunch",47.65822,-122.31372,"$",286,4,FALSE
+"161","Slate Coffee Roasters",47.66114,-122.31378,"$$",101,3.5,FALSE
+"162","Somtam Thai",47.6642113,-122.3127518,"$",176,3.5,FALSE
+"163","Anchored Ship Coffee Bar",47.6666768,-122.3833298,"$",129,4,FALSE
+"164","Starbucks",47.609009,-122.339942,"$",153,3.5,FALSE
+"165","Street Bean Coffee",47.6173786,-122.3493343,"$",260,4.5,FALSE
+"166","Subway",47.6610565185547,-122.317375183105,"$",47,2,FALSE
+"167","Subway",47.341452,-122.30215,"$",11,2,FALSE
+"168","Sultan Gyro Grill & Shawarma",47.6590045,-122.3128726,"$",129,4,FALSE
+"169","Sureshot",47.66148,-122.31346,"$",199,4,FALSE
+"170","Sweet Alchemy Ice Creamery",47.65998,-122.31337,"$$",285,4.5,FALSE
+"171","Talaris Conference Center",47.6594755,-122.2839212,"$$",32,4,FALSE
+"172","Taste of India",47.669083,-122.317484,"$$",1403,4.5,FALSE
+"173","Taste of India",47.669083,-122.317484,"$$",1403,4.5,FALSE
+"174","Taste Of Xi'an",47.66196,-122.31345,"$$",267,4,FALSE
+"175","Tasty",47.66015,-122.3134,NA,12,4,FALSE
+"176","T12 Social House",47.661436,-122.31555,"$$",100,3.5,FALSE
+"177","Tea Republik",47.6620911,-122.3132793,"$",290,4.5,FALSE
+"178","Teriyaki 1st",47.6667137145996,-122.313400268555,"$",310,4.5,FALSE
+"179","Thai 65",47.6587699,-122.31286,"$",283,2.5,FALSE
+"180","Thai Tom",47.662455,-122.3132706,"$",2035,3.5,FALSE
+"181","Thaiger Room",47.65923,-122.31296,"$",563,3,FALSE
+"182","Pho Than Brothers",47.6585,-122.31337,"$",276,3.5,FALSE
+"183","Thanh Vi",47.65919,-122.31296,"$",451,4,FALSE
+"184","The Block",47.658823,-122.3128628,NA,39,3,FALSE
+"185","Victoria Clipper",47.613617,-122.354048,NA,310,3,FALSE
+"186","Tig Kitchen and Bar",47.667652,-122.31269,"$$",31,3,FALSE
+"187","Toshi's Teriyaki The Original",47.66111,-122.28755,"$",39,4,FALSE
+"188","Trinity Market",47.65973,-122.31828,"$",92,4,FALSE
+"189","Trophy Cupcakes and Party",47.6622760371403,-122.299330607057,"$$",283,3.5,FALSE
+"190","U:Don Fresh Japanese Noodle Station",47.61588,-122.31655,"$",299,4,FALSE
+"191","Ugly Mug Café",47.6597958,-122.3139519,"$",427,4.5,FALSE
+"192","Uncle ​Lee's",47.66139,-122.2913,"$$",80,3.5,FALSE
+"193","University Book Store",47.66042,-122.31282,"$$",173,4,FALSE
+"194","Costco",47.681247,-122.18189,"$$",219,3.5,FALSE
+"195","University Inn",47.65779,-122.31747,"$$",119,4,FALSE
+"196","Silver Cloud Hotel Seattle - University District",47.6658592224121,-122.299530029297,"$$",62,4,FALSE
+"197","University Kitchen",47.6571884155273,-122.31290435791,"$",51,2.5,FALSE
+"198","University Village 76",47.66667,-122.30027,NA,9,3,FALSE
+"199","Zoka Coffee Roaster & Tea",47.66589,-122.29734,"$",269,4,FALSE
+"200","Varlamos Pizzeria",47.6609615907563,-122.288446873426,"$$",145,4,FALSE
+"201","Veggie Grill",47.6632151,-122.2986458,"$$",364,4,FALSE
+"202","Ventoux Roasters",47.6687,-122.29096,"$",81,5,FALSE
+"203","Village Sushi",47.66684,-122.31325,"$$",55,4,FALSE
+"204","Wann Yen",47.65969,-122.31346,"$",115,4.5,FALSE
+"205","Watertown Hotel",47.65955,-122.31742,"$$",161,4,FALSE
+"206","Wunderkind",47.6686615039417,-122.292180173099,NA,27,3,FALSE
+"207","Xi'an Noodles",47.66815,-122.31319,"$",608,4,FALSE
+"208","Yummy Bites",47.65774,-122.3135,"$",91,3,FALSE
+"209","Zeta Tau Alpha",47.66401,-122.30872,NA,1,5,FALSE

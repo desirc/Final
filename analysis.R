@@ -3,19 +3,24 @@ library(tidyr)
 library(leaflet)
 library(httr)
 library(jsonlite)
+library(data.table)
+library(purrr)
 
 source("keys.R")
 
 df <- read.csv(
   "./data/Food_Establishment_Inspection_Data.csv", 
-  stringsAsFactors = FALSE
+  stringsAsFactors = FALSE,
+  row.names=NULL
 ) %>% drop_na() %>% 
   mutate(
     Inspection.Date = as.Date(Inspection.Date, format = "%m/%d/%Y")
   ) %>% 
   filter(Zip.Code == 98105, Inspection.Date > as.Date("2009-01-01")) %>% 
   mutate(
-    Grade = as.numeric(Grade)
+    Grade = as.numeric(Grade),
+    Longitude = as.numeric(Longitude),
+    Latitude = as.numeric(Latitude)
   )
 
 
@@ -45,12 +50,13 @@ leaflet() %>%
     label = ~Name
   )
 
+# BURKE GILMAN BREWING COMPANY -122.28802 47.6615
+
+get_restaurant_info("BURKE GILMAN BREWING COMPANY", -122.28802, 47.6615)
 
 
-get_restaurant_info("CHINA FIRST", -122.3135, 47.65944)
-
+base_uri <- "https://api.yelp.com/v3"
 get_restaurant_info <- function(name, long, lat) {
-  endpoint <- "/businesses/search"
   endpoint <- "/businesses/search"
   resource_uri <- paste0(base_uri, endpoint)
   query_params <- list(
@@ -66,14 +72,39 @@ get_restaurant_info <- function(name, long, lat) {
   )
   response_text <- content(response, type = "text")
   response_data <- fromJSON(response_text)
-  df_business <- flatten(response_data$businesses)[1, ] # search results sort by match
   
+  # search results sort by match
+  df_business <- response_data$businesses
   df_business
+  
 }
 
+nrow(df_by_inspection)
 
+
+df_list = list()
+ind = 1
+for (row in 1:nrow(df_by_inspection)) {
+  name <- df_by_inspection[row, 'Name'] %>% pull()
+  long <- df_by_inspection[row, 'Longitude'] %>% pull()
+  lat <- df_by_inspection[row, 'Latitude'] %>% pull()
   
+  df <- get_restaurant_info(name, long, lat)
+  if (length(df) != 0) {
+    df_list[[ind]] <- df[1, ] %>% 
+      jsonlite::flatten() %>% 
+      mutate(
+        price = ifelse("price" %in% names(.), price, NA)
+      ) %>% 
+      select(
+        name, coordinates.latitude, coordinates.longitude, 
+        price, review_count, rating, is_closed
+      )
+    ind = ind + 1
+  }
+}
 
-
+yelp <- bind_rows(df_list)
+write.csv(yelp, "./data/yelp.csv")
 
 
