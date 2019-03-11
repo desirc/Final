@@ -69,6 +69,7 @@ df_merged <- df_by_inspection %>%
   select(-Name) %>%
   rename(Name = name) %>% as.data.frame()
 
+ ## Nhat's part 2
 high_score <- df_merged %>% 
   filter(`Mean Inspection Score` > 5) %>% 
   select(rating) %>% pull()
@@ -79,3 +80,34 @@ low_score <- df_merged %>%
 
 test_result <- t.test(x = high_score, y = low_score, alternative = "less")
 p_val <- test_result$p.value
+
+hex_plot <- ggplot(df_merged, aes(`Mean Inspection Score`, rating)) +
+  geom_hex()
+
+cor <- cor.test(
+  x = df_merged$`Mean Inspection Score`,
+  y = df_merged$rating,
+  method = "spearman"
+)$estimate
+
+##Cecilia's question #4
+
+point_plot <- ggplot(df_merged, aes(`Mean Inspection Score`, review_count)) +
+  geom_point()
+
+ceci_high_score <- df_merged %>% 
+  filter(`Mean Inspection Score` > 5) %>% 
+  select(review_count) %>% pull()
+
+ceci_low_score <- df_merged %>% 
+  filter(`Mean Inspection Score` <= 5) %>% 
+  select(review_count) %>% pull()
+
+ceci_test_result <- t.test(x = ceci_high_score, y = ceci_low_score, alternative = "less")
+ceci_p_val <- test_result$p.value
+
+ceci_cor <- cor.test(
+  x = df_merged$`Mean Inspection Score`,
+  y = df_merged$review_count,
+  method = "pearson"
+)$estimates
