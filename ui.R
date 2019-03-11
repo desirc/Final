@@ -31,8 +31,8 @@ ui <- fluidPage(
         sliderInput(
           inputId = "cutoff",
           label = "Rating cutoff for hypothesis testing",
-          min = 1,
-          max = 5,
+          min = 2,
+          max = 4.5,
           value = 3,
           step = 0.5
         )
@@ -62,7 +62,8 @@ ui <- fluidPage(
         tabPanel("Question 1", value = 1),
         tabPanel(
           "Rating", value = 2,
-          p("Here, we look at the relationship between the rating and other factors (which can be chosen to the left)."),
+          h2("Plot"),
+          textOutput("plot_intro"),
           plotOutput("hex_plot"),
           h2("Qualitative Analysis"),
           p("Visualization might be deceiving, so let us look at some qualitative analysis:"),

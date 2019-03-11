@@ -9,6 +9,13 @@ library(DT)
 source("analysis.R")
 server <- function(input,output){
   #Nhat's part 2
+  output$plot_intro <- renderText({
+    paste(
+      "Here, we look at the relationship between the rating and",
+      tolower(input$feature)
+    )
+  })
+  
   output$hex_plot <- renderPlot({
     hex_plot <- ggplot(df_merged, aes_string(paste0("`", input$feature, "`"), "rating")) +
       geom_hex() +
