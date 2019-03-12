@@ -1,3 +1,4 @@
+# Load Libraries
 library("shiny")
 library("dplyr")
 library("shinythemes")
@@ -5,8 +6,9 @@ library("DT")
 library("shinyWidgets")
 source("analysis.R")
 
-
+# Create Page
 ui <- fluidPage(
+  
   #Chooses the theme and sets background color.
   theme = shinytheme("cosmo"),
   setBackgroundColor("#e6e6fa"),
@@ -14,9 +16,9 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       h3("Controls"),
+      
       #Only shows the control widgets of the tab selected.
       conditionalPanel(condition="input.tabselected == 1",
-  
                        radioButtons(
                          "violation_type",
                          "Violation Type:",
@@ -45,8 +47,8 @@ ui <- fluidPage(
           step = 0.5
         )
       ),
+      
       conditionalPanel(condition="input.tabselected == 3",
-                       #Radio buttons:
                        radioButtons("graph_buttons",
                                     "Inspection vs Grade Score:",
                                     c("Inspection Score" = 
@@ -55,9 +57,11 @@ ui <- fluidPage(
                                       "mean_grade")
                        )
       ),
+      
       conditionalPanel(condition="input.tabselected == 4"
                     
       ),
+      
       conditionalPanel(condition="input.tabselected == 5",
                        h3("Datasets"),
                        radioButtons(
@@ -67,14 +71,18 @@ ui <- fluidPage(
                          selected = "1"
                        )
       ),
+      
       conditionalPanel(condition="input.tabselected == 6"
                        
       )
     ),
+    
+    # Main Panel
     mainPanel(
       h3("Data Selection"),
       tabsetPanel(
-        # Brandon Ly's Question
+        
+        # Brandon's Question
         tabPanel(
           "Violation Types", value = 1,
           p("King County's inspection reporting system includes two types of
@@ -90,7 +98,8 @@ ui <- fluidPage(
           textOutput("violation_text"),
           dataTableOutput("violation_table")
                  ),
-
+        
+        # Nhat's Question
         tabPanel(
           "Rating vs Inspection Score", value = 2,
           h2("Plot"),
@@ -109,6 +118,7 @@ ui <- fluidPage(
           textOutput("hypo_conclude")
         ),
         
+        # Desiree's Question 
         tabPanel("Price Comparisons", value = 3,
          h3("Relationship of price and inspection grades"),
          p("Do more expensive restaurants break fewer health 
@@ -144,7 +154,8 @@ ui <- fluidPage(
            As there are more cheap restaurants than any other, the range of 
             inspection rates is the highest.")
          ),
-          
+        
+        # Cecilia's Question 
         tabPanel("Review Count vs Inspection Score", value = 4,
                  p("Here, we look at the mean inspection score and review count 
                    of restaurants"),
@@ -160,6 +171,7 @@ ui <- fluidPage(
                    238"),
                  textOutput("ceci_p_val")
                  ),
+        
         #Displays a table in the last two tabs
         tabPanel("Inspection Data", value = 5,
                  dataTableOutput(outputId = "table"), width = "100%"),

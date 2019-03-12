@@ -1,3 +1,4 @@
+# Load Libraries
 library("ggplot2")
 library(dplyr)
 library(tidyr)
@@ -8,8 +9,10 @@ library(DT)
 
 source("analysis.R")
 
+# Create Server
 server <- function(input,output){
-  #Nhat's part 2
+  
+  #Nhat's Tab
   output$plot_intro <- renderText({
     paste(
       "Here, we look at the relationship between the rating and",
@@ -26,7 +29,6 @@ server <- function(input,output){
       ) + theme_bw() +theme(panel.border = element_blank())
     hex_plot
   })
-  
   
   cor <- reactive({
     cor.test(
@@ -104,7 +106,8 @@ server <- function(input,output){
       "This means that we cannot reject the null hypothesis."
     )
   })
-  #Cecilia's part 4
+  
+  #Cecilia's Tab
   output$point_plot <- renderPlot({
     point_plot
   })
@@ -120,8 +123,8 @@ server <- function(input,output){
       ceci_p_val
     )
   })
-  #data at the end
-  #Shows the inspection dataset on the inspection data tab
+  
+  # Data Tabs at the end
   output$table <- renderDataTable({
     df <- read.csv(
       "./data/Food_Establishment_Inspection_Data.csv", 
@@ -162,6 +165,7 @@ server <- function(input,output){
       )
   })
   
+  # Desiree's Tab
   output$number_restaurants_v_price <- renderPlot({
     n_cheap_restaurants <- nrow(filter(df_merged, price == "$"))
     n_mid_restaurants <- nrow(filter(df_merged, price == "$$"))
@@ -186,6 +190,7 @@ server <- function(input,output){
     response <- paste0(response, collapse = "")
   })
   
+  # Brandon's Tab 
   output$violation_pie <- renderPlot({
     num_codes <- df %>% 
       select(Violation.Description, Name, Violation.Type) %>% 
