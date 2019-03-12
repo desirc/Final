@@ -23,7 +23,7 @@ server <- function(input,output){
       labs(
         y = input$feature,
         x = "Rating"
-      )
+      ) + theme_bw() +theme(panel.border = element_blank())
     hex_plot
   })
   
@@ -155,7 +155,11 @@ server <- function(input,output){
     names(temp_df_merged) <- c("Longitude", "Latitude","mean_inspection_score","mean_grade","X","Name","coordinates.latitude","coordinates.longitude","price","review_count","rating","is_closed")
     ggplot(data = temp_df_merged) +
       geom_col(mapping = aes(x = price, y = temp_df_merged[,input$graph_buttons], fill = Name)) +
-      theme(legend.position = 'none')
+      theme(legend.position = 'none')+
+      labs(
+        x = "price",
+        y = input$graph_buttons
+      )
   })
   
   output$number_restaurants_v_price <- renderPlot({
@@ -205,7 +209,7 @@ server <- function(input,output){
              paste(input$violation_type,"Violations - Number of Occurences"))+
       theme_classic() + theme(axis.line = element_blank(),
                               axis.text = element_blank()
-                              )
+                              ) 
     pie
   })
     
@@ -218,7 +222,6 @@ server <- function(input,output){
     
   })
   
-  output$violation_table <- renderTable({
   output$violation_table <- renderDataTable({
     code_table <- df %>% 
       select(Violation.Description, Name, Violation.Type) %>% 
