@@ -120,6 +120,7 @@ server <- function(input,output){
     )
   })
   #data at the end
+  #Shows the inspection dataset on the inspection data tab
   output$table <- renderDataTable({
     df <- read.csv(
       "./data/Food_Establishment_Inspection_Data.csv", 
@@ -142,8 +143,42 @@ server <- function(input,output){
     
   })
   
+  #Shows the yelp API dataset on the app.
   output$table2 <- renderDataTable({
-    
+    df2 <- select(df_merged, Name, 'Mean Inspection Score', 'Mean Grade', 'price', 'review_count', 'rating')
+    df2
+  })
+  
+  output$price_v_grade <- renderPlot({
+    temp_df_merged <- df_merged %>% drop_na(price)
+    names(temp_df_merged) <- c("Longitude", "Latitude","mean_inspection_score","mean_grade","X","Name","coordinates.latitude","coordinates.longitude","price","review_count","rating","is_closed")
+    ggplot(data = temp_df_merged) +
+      geom_col(mapping = aes(x = price, y = temp_df_merged[,input$graph_buttons], fill = Name)) +
+      theme(legend.position = 'none')
+  })
+  
+  output$number_restaurants_v_price <- renderPlot({
+    n_cheap_restaurants <- nrow(filter(df_merged, price == "$"))
+    n_mid_restaurants <- nrow(filter(df_merged, price == "$$"))
+    n_expensive_restuarants <- nrow(filter(df_merged, price == "$$$"))
+    price_df <- data.frame(c("$","$$","$$$"),c(n_cheap_restaurants,n_mid_restaurants,n_expensive_restuarants))
+    names(price_df) <- c("price","num_restaurants")
+    ggplot(data = price_df)+
+      geom_col(mapping = aes(x = price, y = num_restaurants), fill = "Red")
+  })
+  
+  output$graph_type <- renderText({
+    response <- ifelse(input$graph_buttons == "mean_inspection_score", "mean inspection score.", "mean grade")
+    output_response <- paste("Above shows a graph of",response, collapse = "")
+  })
+  
+  output$range <- renderText({
+    low_price_only_df <- filter(df_merged, price == "$")
+    range_low_price <- max(low_price_only_df[["Mean Inspection Score"]]) - min(low_price_only_df[["Mean Inspection Score"]])
+    response <- c("The above bar chart shows the number of restaurants of a certain price.
+           Both graphs look very similar, showing that actually the more the number of restaurants, the higher the range of inspection codes broken/grades likely.
+           The maximum inspection score was ", range_low_price, ".")
+    response <- paste0(response, collapse = "")
   })
   
 
