@@ -3,6 +3,7 @@ library("dplyr")
 library("shinythemes")
 library("DT")
 library("shinyWidgets")
+source("analysis.R")
 
 
 ui <- fluidPage(
@@ -45,7 +46,12 @@ ui <- fluidPage(
         )
       ),
       conditionalPanel(condition="input.tabselected == 3",
-                       h3("3rd tab selected")
+                       h3("Price tab widgets:"),
+                       #Radio buttons:
+                       radioButtons("graph_buttons",
+                                    "Choose the y axis input:",
+                                    c("Inspection score" = "mean_inspection_score", "Grade_score" = "mean_grade")
+                       )
       ),
       conditionalPanel(condition="input.tabselected == 4",
                        h3("4th tab selected")
@@ -99,7 +105,31 @@ ui <- fluidPage(
           textOutput("p_val_res"),
           textOutput("hypo_conclude")
         ),
-        tabPanel("Question 3", value = 3),
+        tabPanel("Price comparisons", value = 3,
+         h3("Relationship of price and inspection grades"),
+         p("Do more expensive restaurants break fewer health codes/inspections?"),
+         br(),
+         p("Logically restaurants with more money would have more money to make the restaurants hygenic.
+           This means that more expensive restaurants should break fewer health codes."),
+         plotOutput("price_v_grade", width = "100%"),
+         textOutput("graph_type"),
+         p("The higher the mean inspection score, the more inspection codes a restaurant has broken meaning the worse they have done.
+           The yelp API uses $,$$ and $$$ to show low prices restuarants, medium priced restaurants and high priced restaurants.
+           The higher the grade, the more inspection codes broken."),
+           br(),
+           p("By the trend of the graph, you can see that the lowest price has the highest scores of inspection codes.
+           This would suggest that the lower prices, the more break more inspection laws and so the cheaper restuarants are less safe 
+             -agreeing with the question proposed."),
+         br(),
+         plotOutput("number_restaurants_v_price", width = "100%"),
+         textOutput("range"), 
+         p("The answer to the originally proposed question is no. The range of data was the largest for the lowest prices as the maximum inspection score of the entire dataset is the same number.
+           This would suggest that the price range of restaurants and the inspection scores of those restaurants are not correlated.
+           Rather, it shows that the more restaurants there are the higher the range of inspection rates.
+           As there are more cheap restaurants than any other, the range of inspection rates is the highest.
+           ")
+         ),
+          
         tabPanel("Question 4", value = 4,
                  p("Here, we look at the mean inspection score and review count of restaurants"),
                  plotOutput("point_plot"),
