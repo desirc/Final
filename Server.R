@@ -7,6 +7,7 @@ library(jsonlite)
 library(DT)
 
 source("analysis.R")
+
 server <- function(input,output){
   output$hex_plot <- renderPlot({
     hex_plot
@@ -50,5 +51,51 @@ server <- function(input,output){
     
   })
   
+  output$violation_pie <- renderPlot({
+    num_codes <- df %>% 
+      select(Violation.Description, Name, Violation.Type) %>% 
+      filter(Violation.Type == input$violation_type) %>%
+      mutate(code = substr(Violation.Description, 1, 4)) %>%
+      group_by(code) %>% 
+      count() %>% 
+      spread(
+        key = code,
+        value = n
+      ) %>% 
+      gather(
+        key = code,
+        value = Number_of_occurences
+      )
+    pie <- ggplot(num_codes, aes(x = "", y = Number_of_occurences, fill = code))+
+      geom_bar(width = 1, stat = "identity", color = "black") +
+      coord_polar("y", start = 0) + 
+      labs(x = NULL, y = NULL, fill = "Violation Codes",
+           title = 
+             paste(input$violation_type,"Violations - Number of Occurences"))+
+      theme_classic() + theme(axis.line = element_blank(),
+                              axis.text = element_blank()
+                              )
+    pie
+  })
+    
+  output$violation_text <- renderText({
+    violation_text <- c("The pie chart above shows which ", input$violation_type, 
+                        " violations were the most common in food establishments
+                        in King County. The table below shows the meaning of each
+                        violation code, as well as the number of occurences.")
+    paste(violation_text, collapse = "")
+    
+  })
+  
+  output$violation_table <- renderTable({
+    code_table <- df %>% 
+      select(Violation.Description, Name, Violation.Type) %>% 
+      filter(Violation.Type == input$violation_type) %>% 
+      group_by(Violation.Description) %>% 
+      count() %>% 
+      rename("Number of Occurences" = n, 
+             "Violation Code/Description" = Violation.Description)
+    code_table
+  })
 
 }

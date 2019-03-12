@@ -14,8 +14,14 @@ ui <- fluidPage(
       h3("Controls"),
       #Only shows the control widgets of the tab selected.
       conditionalPanel(condition="input.tabselected == 1",
-                       h3("1st tab selected")
-                       ),
+                       h3("1st tab selected"),
+                       radioButtons(
+                         "violation_type",
+                         "Violation Type:",
+                         c("Red" = "RED", "Blue" = "BLUE"),
+                         selected = "RED"
+                       )
+      ),
       conditionalPanel(condition="input.tabselected == 2",
                        h3("2nd tab selected")
       ),
@@ -41,7 +47,23 @@ ui <- fluidPage(
     mainPanel(
       h3("Display"),
       tabsetPanel(
-        tabPanel("Question 1", value = 1),
+        # Brandon Ly's Question 
+        tabPanel(
+          "Question 1", value = 1,
+          p("King County's inspection reporting system includes two types of 
+            critical violations; red and blue. Food establishments that receive
+            Red critical violations have failed to meet food handling standards
+            that could likely lead to food borne illnesses as a result.
+            Some of these violations include incorrectly storing food, washing 
+            hands, and controlling temperature.
+            Blue critical violations have failed to meet mantinence and
+            sanitation standards but are not likely the cause of food bourne 
+            illness."),
+          plotOutput("violation_pie"),
+          textOutput("violation_text"),
+          tableOutput("violation_table")
+                 ),
+        
         tabPanel(
           "Question 2", value = 2,
           p("Here, we look at the relationship between the mean inspection score and rating of restaurants"),
