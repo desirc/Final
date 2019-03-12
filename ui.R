@@ -101,8 +101,7 @@ ui <- fluidPage(
         
         # Nhat's Question
         tabPanel(
-          "Rating vs Inspection Score", value = 2,
-          h2("Plot"),
+          "Rating vs Inspection/Grade Score", value = 2,
           textOutput("plot_intro"),
           plotOutput("hex_plot"),
           h2("Qualitative Analysis"),
