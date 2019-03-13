@@ -42,11 +42,6 @@ df_by_inspection <- df %>%
   ) %>% 
   as_data_frame()
 
-hex_plot <- ggplot(df_merged, aes_string('`Mean Inspection Score`', "rating")) +
-  geom_hex()
-hex_plot
-
-
 yelp <- read.csv("./data/yelp.csv", stringsAsFactors = FALSE) 
 
 colnames(yelp)
